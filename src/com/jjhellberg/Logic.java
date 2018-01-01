@@ -38,27 +38,16 @@ public class Logic {
         int checksum = 0;
 
         for (Integer[] array : matrix) {
-            for (int i : array) {
-                for (int j : array) {
-                    if (i != j && i % j == 0) {
-                        checksum += i / j;
+            Arrays.sort(array, Collections.reverseOrder());
+
+            for(int i = 0; i < array.length; i++) {
+                for(int j = i; j < array.length; j++) {
+                    if (array[i] != array[j] && array[i] % array[j] == 0) {
+                        checksum += array[i] / array[j];
                     }
                 }
             }
         }
-
-//  Use sorted array to decrease amount of entries to loop over
-//        for (Integer[] array : matrix) {
-//            Arrays.sort(array, Collections.reverseOrder());
-//
-//            for(int i = 0; i < array.length; i++) {
-//                for(int j = i; j < array.length; j++) {
-//                    if (array[i] != array[j] && array[i] % array[j] == 0) {
-//                        checksum += array[i] / array[j];
-//                    }
-//                }
-//            }
-//        }
 
         return checksum;
     }
