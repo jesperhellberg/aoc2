@@ -6,13 +6,13 @@ import java.util.Collections;
 public class Logic {
 
     private Integer[][] setUpMatrix(String input) {
-        String [] lines = input.split("\n");
+        String[] lines = input.split("\n");
         Integer[][] matrix = new Integer[lines.length][];
 
-        for(int i = 0; i < lines.length; i++) {
+        for (int i = 0; i < lines.length; i++) {
             String[] stringNumbers = lines[i].split("\t");
             matrix[i] = new Integer[stringNumbers.length];
-            for(int j = 0; j < stringNumbers.length; j++) {
+            for (int j = 0; j < stringNumbers.length; j++) {
                 matrix[i][j] = Integer.parseInt(stringNumbers[j]);
             }
         }
@@ -20,7 +20,7 @@ public class Logic {
     }
 
 
-    public int getChecksum(String input) {
+    public int getChecksumPart1(String input) {
         Integer[][] matrix = setUpMatrix(input);
         int checksum = 0;
 
@@ -30,8 +30,40 @@ public class Logic {
             checksum += max - min;
         }
 
-
         return checksum;
     }
 
+    public int getChecksumPart2(String input) {
+        Integer[][] matrix = setUpMatrix(input);
+        int checksum = 0;
+
+        for (Integer[] array : matrix) {
+            for (int i : array) {
+                for (int j : array) {
+                    if (i != j && i % j == 0) {
+                        checksum += i / j;
+                    }
+                }
+            }
+        }
+
+//  Use sorted array to decrease amount of entries to loop over
+//        for (Integer[] array : matrix) {
+//            Arrays.sort(array, Collections.reverseOrder());
+//
+//            for(int i = 0; i < array.length; i++) {
+//                for(int j = i; j < array.length; j++) {
+//                    if (array[i] != array[j] && array[i] % array[j] == 0) {
+//                        checksum += array[i] / array[j];
+//                    }
+//                }
+//            }
+//        }
+
+        return checksum;
+    }
 }
+
+
+
+

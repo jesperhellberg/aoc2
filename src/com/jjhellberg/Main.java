@@ -19,12 +19,12 @@ public class Main {
             "401\t151\t309\t961\t124\t1027\t1084\t389\t1150\t166\t1057\t137\t932\t669\t590\t188\n" +
             "784\t232\t363\t316\t336\t666\t711\t430\t192\t867\t628\t57\t222\t575\t622\t234\n";
 
-    private static final String TESTINPUT = "5\t1\t9\t5\n" +
-            "7\t5\t3\n" +
-            "2\t4\t6\t8";
+
+
 
     public static void main(String[] args) {
         Logic l = new Logic();
-        System.out.print(l.getChecksum(INPUT));
+        System.out.println(l.getChecksumPart1(INPUT));
+        System.out.println(l.getChecksumPart2(INPUT));
     }
 }
