@@ -2,7 +2,7 @@ package com.jjhellberg;
 
 public class Main {
 
-    public static final String INPUT = "4347\t3350\t196\t162\t233\t4932\t4419\t3485\t4509\t4287\t4433\t4033\t207\t3682\t2193\t4223\n" +
+    private static final String INPUT = "4347\t3350\t196\t162\t233\t4932\t4419\t3485\t4509\t4287\t4433\t4033\t207\t3682\t2193\t4223\n" +
             "648\t94\t778\t957\t1634\t2885\t1964\t2929\t2754\t89\t972\t112\t80\t2819\t543\t2820\n" +
             "400\t133\t1010\t918\t1154\t1008\t126\t150\t1118\t117\t148\t463\t141\t940\t1101\t89\n" +
             "596\t527\t224\t382\t511\t565\t284\t121\t643\t139\t625\t335\t657\t134\t125\t152\n" +
@@ -18,6 +18,10 @@ public class Main {
             "134\t130\t2236\t118\t142\t2350\t3007\t2495\t2813\t2833\t2576\t2704\t169\t2666\t2267\t850\n" +
             "401\t151\t309\t961\t124\t1027\t1084\t389\t1150\t166\t1057\t137\t932\t669\t590\t188\n" +
             "784\t232\t363\t316\t336\t666\t711\t430\t192\t867\t628\t57\t222\t575\t622\t234\n";
+
+    private static final String TESTINPUT = "5\t1\t9\t5\n" +
+            "7\t5\t3\n" +
+            "2\t4\t6\t8";
 
     public static void main(String[] args) {
         Logic l = new Logic();

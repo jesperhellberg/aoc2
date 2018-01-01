@@ -1,7 +1,6 @@
 package com.jjhellberg;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class LogicTest {
@@ -10,11 +9,11 @@ class LogicTest {
             "2\t4\t6\t8";
 
 
-    Logic logic = new Logic();
+    private Logic logic = new Logic();
 
 
     @Test
-    void testInputSplit() {
-
+    void testChecksum() {
+        assertEquals(18, logic.getChecksum(TESTINPUT));
     }
 }
